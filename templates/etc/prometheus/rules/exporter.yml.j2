@@ -1,0 +1,10 @@
+groups:
+  - name: exporter
+    rules:
+      - alert: exporter_down
+        expr: up == 0
+        for: 5m
+        labels:
+          severity: major
+        annotations:
+          summary: "Exporter down (instance {{ $labels.instance }} job {{ $labels.job }})"
