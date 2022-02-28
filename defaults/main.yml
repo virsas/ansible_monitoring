@@ -27,7 +27,7 @@ PROMETHEUS_JOBS:
       - { name: service_one, targets: ['10.0.0.4:2001', '10.0.0.5:2001'] }
       - { name: service_two, targets: ['10.0.0.4:2002', '10.0.0.5:2002'] }
 PROMETHEUS_RULES:
-  - { name: "exporter_down", condition: "up == 0", duration: "5m", severity: "major", summary: "Exporter down (instance \{\{ \$labels.instance \}\} job \{\{ \$labels.job \}\})" }
+  - { name: "exporter_down", condition: "up == 0", duration: "5m", severity: "major", summary: "Exporter down" }
 
 ALERTMANAGER_VERSION: "0.23.0"
 ALERTMANAGER_ARCH: "arm64"
