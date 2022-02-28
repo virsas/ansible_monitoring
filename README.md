@@ -99,6 +99,8 @@ ansible_ssh_host: 1.1.1.1
 
 ### Group vars (./sites/NAME/group_vars/monitoring.yml)
 
+Please see the variables below to get the complete list of possible modifications. The YAML file below is just a basic example of a minimal configuration.
+
 ``` yaml
 PROMETHEUS_JOBS:
   -
