@@ -29,17 +29,7 @@
   with_items:
     - { source: "etc/systemd/system/prometheus.service.j2", destination: "/etc/systemd/system/prometheus.service", mode: "0644", user: "root", group: "root"}
     - { source: "etc/prometheus/prometheus.yml.j2", destination: "/etc/prometheus/prometheus.yml", mode: "0644", user: "root", group: "root"}
-  notify:
-    - restart prometheus
-
-- name: Copy alerting rules
-  copy:
-    src: "{{ item }}"
-    dest: "/etc/prometheus/rules/"
-    owner: root
-    group: root
-    mode: 0640
-  with_fileglob: "etc/prometheus/rules/*.yml"
+    - { source: "etc/prometheus/rules/rules.yml.j2", destination: "/etc/prometheus/rules/rules.yml", mode: "0640", user: "root", group: "root"}
   notify:
     - restart prometheus
 
