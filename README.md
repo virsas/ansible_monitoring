@@ -1,4 +1,4 @@
-# ansirole_monitoring
+# ansible_monitoring
 
 ## Role installation
 
@@ -16,10 +16,10 @@ touch requirements/monitoring.yml
 ---
 
 # ansible-galaxy install -p vss_galaxy_roles --force -r requirements/monitoring.yml
-- src: "https://github.com/virsas/ansirole_monitoring"
+- src: "https://github.com/virsas/ansible_monitoring"
   scm: git
   version: v1.0
-  name: ansirole_monitoring
+  name: ansible_monitoring
   path: vss_galaxy_roles
 ```
 
@@ -42,8 +42,8 @@ If you are using git for your playbooks and sites configuration, add vss_galaxy_
 ``` bash
 $ cd vss_galaxy_roles
 $ ls
-ansirole_monitoring
-$ cd ansirole_monitoring
+ansible_monitoring
+$ cd ansible_monitoring
 $ ls -1
 defaults
 handlers
@@ -79,7 +79,7 @@ host_key_checking=False
   remote_user: ec2-user
   become: yes
   roles:
-    - ansirole_monitoring
+    - ansible_monitoring
 ```
 
 ### Inventory (./sites/NAME/inventory)
